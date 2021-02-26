@@ -548,9 +548,9 @@
       <category term="博客建站" scheme="https://diary.dorcandy.cn/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%99/"/>
     
     
-      <category term="博客" scheme="https://diary.dorcandy.cn/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
       <category term="Hexo" scheme="https://diary.dorcandy.cn/tags/Hexo/"/>
+    
+      <category term="博客" scheme="https://diary.dorcandy.cn/tags/%E5%8D%9A%E5%AE%A2/"/>
     
       <category term="建站" scheme="https://diary.dorcandy.cn/tags/%E5%BB%BA%E7%AB%99/"/>
     
