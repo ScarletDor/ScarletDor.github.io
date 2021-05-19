@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://diary.dorcandy.cn/"/>
-  <updated>2021-05-19T10:30:40.230Z</updated>
+  <updated>2021-05-19T13:58:07.376Z</updated>
   <id>https://diary.dorcandy.cn/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>夏天了夏天了</title>
+    <title>夏天了夏天了哈哈哈</title>
     <link href="https://diary.dorcandy.cn/posts/79768e3c/"/>
     <id>https://diary.dorcandy.cn/posts/79768e3c/</id>
     <published>2021-05-19T04:20:54.000Z</published>
-    <updated>2021-05-19T10:30:40.230Z</updated>
+    <updated>2021-05-19T13:58:07.376Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>最近学业繁忙，做什么都不顺心，网站也很久没更新了，今天想新写一篇博客，还是写不出什么内容<br>想来想去要是动态网站就好了，随时随地写写东西，hexo发布也很麻烦（最近很好接触电脑），所以转投了一个typecho，空间也是免费的，就写写简单的（手机写写也方便），放在了顶层菜单了，就这样挺好的，hexo先搁置，毕竟养老还是要用hexo（大概</p><p>这样的话，也可以晒吃的了哈哈哈</p><p>地址是<a href="https://blog.dorcandy.cn/" target="_blank" rel="noopener">https://blog.dorcandy.cn/</a></p>]]></content>
     
@@ -594,11 +594,11 @@
       <category term="博客建站" scheme="https://diary.dorcandy.cn/categories/%E7%AC%94%E8%AE%B0/%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%99/"/>
     
     
-      <category term="Hexo" scheme="https://diary.dorcandy.cn/tags/Hexo/"/>
-    
       <category term="博客" scheme="https://diary.dorcandy.cn/tags/%E5%8D%9A%E5%AE%A2/"/>
     
       <category term="建站" scheme="https://diary.dorcandy.cn/tags/%E5%BB%BA%E7%AB%99/"/>
+    
+      <category term="Hexo" scheme="https://diary.dorcandy.cn/tags/Hexo/"/>
     
       <category term="转载" scheme="https://diary.dorcandy.cn/tags/%E8%BD%AC%E8%BD%BD/"/>
     
