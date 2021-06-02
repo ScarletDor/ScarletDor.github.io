@@ -65,16 +65,16 @@ ga('send', 'pageview');
 <li>将valine中的头像地址改为上述接口地址<br>此时，我觉得想法的实现流程非常缜密，感到可行，开心到飞起~ let me do it！</li>
 </ul>
 <p>F12查看源码–发现valine中显示头像的相关代码是：（关键标签：vimg）</p>
-<p><img alt data-src="https://img-blog.csdnimg.cn/20200303191145475.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N1bmd1ZGFmYQ==,size_16,color_FFFFFF,t_70" class="lazyload mediumZoom"></p>
+<p><img alt class="mediumZoom lazyload" data-src="https://img-blog.csdnimg.cn/20200303191145475.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N1bmd1ZGFmYQ==,size_16,color_FFFFFF,t_70"></p>
 <p>再以我ctrl+F快速查找的本领（关键词：vimg），不负众望，在Valine.min.js中找到</p>
 <ol>
 <li>首先我们要知道：valine的头像处理接口是gravator</li>
 </ol>
-<p><img alt data-src="https://img-blog.csdnimg.cn/20200303192013107.png" class="lazyload mediumZoom"></p>
+<p><img alt class="mediumZoom lazyload" data-src="https://img-blog.csdnimg.cn/20200303192013107.png"></p>
 <ol start="2">
 <li>拼接头像地址并显示的关键步骤：</li>
 </ol>
-<p><img alt data-src="https://img-blog.csdnimg.cn/20200303192356464.png" class="lazyload mediumZoom"></p>
+<p><img alt class="mediumZoom lazyload" data-src="https://img-blog.csdnimg.cn/20200303192356464.png"></p>
 <p>ok，找到源头，替换src的内容即可。</p>
 <div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img class=&quot;vimg&quot; src=&quot;&apos;+(m.cdn+a(e.get(&quot;mail&quot;))+m.params)+&apos;&quot;&gt;</span><br></pre></td></tr></table></figure></div>
 <p>正式开干！</p>
@@ -82,18 +82,18 @@ ga('send', 'pageview');
 <script src="../js/Valine.min.js"></script>
 
 <p>我的引入位置在：themes\sakura\layout_partial\comment.ejs<br>如果你是在footer.ejs，注意相对路径只有一个点<script src="./js/Valine.min.js"></script></p>
-<p><img alt data-src="https://img-blog.csdnimg.cn/20200303192846877.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N1bmd1ZGFmYQ==,size_16,color_FFFFFF,t_70" class="lazyload mediumZoom"></p>
+<p><img alt class="mediumZoom lazyload" data-src="https://img-blog.csdnimg.cn/20200303192846877.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N1bmd1ZGFmYQ==,size_16,color_FFFFFF,t_70"></p>
 <p>打开Valine.min.js，ctrl+F快速查找关键词：</p>
 <div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">m.cdn+a(e.get(&quot;mail&quot;))+m.params</span><br></pre></td></tr></table></figure></div>
 <p>定位到：</p>
-<p><img alt data-src="https://img-blog.csdnimg.cn/20200303194019193.png" class="lazyload mediumZoom"></p>
+<p><img alt class="mediumZoom lazyload" data-src="https://img-blog.csdnimg.cn/20200303194019193.png"></p>
 <p>稍加换行如图所示：</p>
-<p><img alt data-src="https://img-blog.csdnimg.cn/20200303194153919.png" class="lazyload mediumZoom"></p>
+<p><img alt class="mediumZoom lazyload" data-src="https://img-blog.csdnimg.cn/20200303194153919.png"></p>
 <p>修改前：</p>
 <div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C=function(e,n,r)&#123;</span><br><span class="line">	var i=u.create(&quot;div&quot;,&#123;class:&quot;vcard&quot;,id:e.id&#125;),o=m.hide?&quot;&quot;:&apos;&lt;img class=&quot;vimg&quot; src=&quot;&apos;+(m.cdn+a(e.get(&quot;mail&quot;))+m.params)+&apos;&quot;&gt;&apos;,</span><br></pre></td></tr></table></figure></div>
 <p>修改后：其实关键代码就这一点点~ QAQ</p>
 <div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var C=function(e,n,r)&#123;</span><br><span class="line">var qq_img=m.cdn+a(e.get(&quot;mail&quot;))+m.params;//默认gravator头像接口</span><br><span class="line"> if(e.get(&quot;mail&quot;).indexOf(&quot;@qq.com&quot;) &gt;= 0)&#123;</span><br><span class="line">	var prefix = e.get(&quot;mail&quot;).replace(/@.*/, &quot;&quot;);//前缀</span><br><span class="line">	var pattern=/^\d+$/g;  //正则表达式，数字</span><br><span class="line">	var result= prefix.match(pattern);//match 是匹配的意思</span><br><span class="line">	if(result!==null)&#123;</span><br><span class="line">		qq_img = &quot;//q1.qlogo.cn/g?b=qq&amp;nk=&quot;+ prefix +&quot;&amp;s=100&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">var i=u.create(&quot;div&quot;,&#123;class:&quot;vcard&quot;,id:e.id&#125;),o=m.hide?&quot;&quot;:&apos;&lt;img class=&quot;vimg&quot; src=&quot;&apos;+ (qq_img)+&apos;&quot;&gt;&apos;,</span><br></pre></td></tr></table></figure></div>
-<p><img alt data-src="https://img-blog.csdnimg.cn/20200303194354956.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N1bmd1ZGFmYQ==,size_16,color_FFFFFF,t_70" class="lazyload mediumZoom"></p>
+<p><img alt class="mediumZoom lazyload" data-src="https://img-blog.csdnimg.cn/20200303194354956.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N1bmd1ZGFmYQ==,size_16,color_FFFFFF,t_70"></p>
 <h2 id="流程："><a href="#流程：" class="headerlink" title="流程："></a>流程：</h2><ol>
 <li>默认还是gravator头像接口</li>
 <li>判断是否是qq邮箱，提取前缀prefix</li>
@@ -101,7 +101,7 @@ ga('send', 'pageview');
 <li>拼接头像地址</li>
 <li>加入src显示！</li>
 </ol>
-<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p><img alt data-src="https://img-blog.csdnimg.cn/20200303195721408.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N1bmd1ZGFmYQ==,size_16,color_FFFFFF,t_70" class="lazyload mediumZoom"></p>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p><img alt class="mediumZoom lazyload" data-src="https://img-blog.csdnimg.cn/20200303195721408.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N1bmd1ZGFmYQ==,size_16,color_FFFFFF,t_70"></p>
 <p>哈哈哈，如果有其他邮箱头像接口，都可以同理加上哦！</p>
 <p>都说博客的 评论模块 和 消息通知模块 是最难的，为了花式DIY评论区，效果自己也比较满意吧。</p>
 </div></article><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
