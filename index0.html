@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dmego Home">
+    <meta name="keywords" content="Dmego,Homepage">
+    <meta name="author" content="Dmego">
+    <title>火喵博客･临时站点</title>
+	<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/zc998800/cdn/image/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zc998800/cdn/404/vno.css">
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/zc998800/cdn/image/favicon.ico">
+	
+	<!-- Google Fonts-->
+	<style type="text/css">
+	@font-face {
+	  font-family: 'Quicksand';
+	  src: url(https://cdn.jsdelivr.net/gh/zc998800/cdn/font/ziti.woff) format('woff2');
+	}
+
+	body,td,th,p,h1,h2,h3,h4,h5,h6 {font-family: Quicksand;}
+	</style>
+
+</head>
+
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false" onbeforecopy="return false" oncopy=document.selection.empty() onselect=document.selection.empty()>
+    <header id="panel" class="panel-cover">
+        <div class="panel-main">
+            <div class="panel-main__inner panel-inverted">
+                <div class="panel-main__content">
+                    <div class="ih-item circle effect right_to_left">            
+                        <a href="#" title="" class="blog-button">
+                            <div class="img"><img src="https://cdn.jsdelivr.net/gh/zc998800/cdn/image/dorcandy.jpg" alt="img" class="js-avatar iUp profilepic"></div>
+                            <div class="info iUp">
+                                <div class="info-back">
+                                    <h2> 
+                                        
+                                            瞅啥 ￣へ￣
+                                        
+                                    </h2>
+                                    <p>
+                                        
+                                            ——火喵
+                                        
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- <a href="#" title="Dmego Home" class="profilepic">
+                        <img src="./img/logo2.jpg" width="80" alt="Dmego`s logo" class="js-avatar iUp show" />
+                    </a> -->
+                    <h1>
+											<br>
+                        <a href="/" title=""><font size="35">火喵博客</font></a>
+						<br>
+                    </h1>
+                    <p class="panel-cover__subtitle panel-subtitle iUp">这两天把博客整出问题了，暂时维护四天（9.27-9.30），留言请去主页：www.dorcandy.cn</p>
+                    <hr class="panel-cover__divider iUp" />
+                    
+                    <div class="navigation-wrapper iUp">
+                        <div>
+                            <nav class="cover-navigation cover-navigation--primary">
+                                <ul class="navigation">
+                                     <li class="navigation__item">
+                                        <a href="https://www.dorcandy.cn/" class="blog-button">主页</a>
+                                    </li>
+                                    <li class="navigation__item">
+                                        <a href="https://cat.dorcandy.cn/" class="blog-button">日记</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-cover--overlay cover-slate"></div>
+        </div>
+        <!-- <div class="beian iUp">
+            <a class="icp" href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank">XXX</a>
+            <a class="gwab" href="http://www.beian.gov.cn/portal/recordQuery" target="_blank">XXX</a>
+        </div> -->
+        <div class="remark iUp">
+            <p class="power">Powered By 
+                <a href="https://bird.ioliu.cn/" target="_blank"> JsonBird </a> And 
+                <a href="https://hitokoto.cn/" target="_blank"> Hitokoto </a>
+            </p>
+        </div>
+    </header>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/zc998800/cdn/404/fetch.min.js"></script>
+	<script>
+[].forEach.call(document.querySelectorAll('.img'), function(img){
+img.src = img.dataset.src
+});
+	</script>
+	<script>
+var iUp = (function () {
+	var t = 0,
+		d = 150,
+		clean = function () {
+			t = 0;
+		},
+		up = function (e) {
+			setTimeout(function () {
+				$(e).addClass("up")
+			}, t);
+			t += d;
+		},
+		down = function (e) {
+			$(e).removeClass("up");
+		},
+		toggle = function (e) {
+			setTimeout(function () {
+				$(e).toggleClass("up")
+			}, t);
+			t += d;
+		};
+	return {
+		clean: clean,
+		up: up,
+		down: down,
+		toggle: toggle
+	}
+})();
+
+$(document).ready(function () {
+
+	// 获取一言数据
+	fetch('https://v1.hitokoto.cn').then(function (res) {
+		return res.json();
+	}).then(function (e) {
+		$('#description').html(e.hitokoto + "<br/> -「<strong>" + e.from + "</strong>」")
+	}).catch(function (err) {
+		console.error(err);
+	})
+
+	
+	// var url = 'https://query.yahooapis.com/v1/public/yql' + 
+    // '?q=' + encodeURIComponent('select * from json where url=@url') +
+    // '&url=' + encodeURIComponent('https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8') +
+	// '&format=json&callback=?';
+
+	/**
+	 * 获取Bing壁纸
+	 * 原先 YQL 已经无法提供服务了
+	 * 改用 JsonBird：https://bird.ioliu.cn/
+	 * 
+	 */
+	var url = 'https://bird.ioliu.cn/v1/?url=https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8';
+	var imgUrls = JSON.parse(sessionStorage.getItem("imgUrls"));
+	var index = sessionStorage.getItem("index");
+	var $panel = $('#panel');
+
+		imgUrls = new Array();
+		index = 0;		
+		$.get(url,function (result) {
+			images = result.images;
+			for (let i = 0; i < images.length; i++) {
+				const item = images[i];
+				imgUrls.push(item.url);
+			}
+			var imgUrl = imgUrls[index];
+			$panel.css("background", "url('https://cdn.jsdelivr.net/gh/zc998800/cdn/image/bg.jpg') center center no-repeat #666");
+			$panel.css("background-size", "cover");
+			sessionStorage.setItem("imgUrls",JSON.stringify(imgUrls));
+			sessionStorage.setItem("index",index);
+			});
+	
+	
+	$(".iUp").each(function (i, e) {
+		iUp.up(e);
+	});
+
+	$(".js-avatar")[0].onload = function () {
+		$(".js-avatar").addClass("show");
+	}
+});
+
+$('.btn-mobile-menu__icon').click(function() {
+    if ($('.navigation-wrapper').css('display') == "block") {
+      $('.navigation-wrapper').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+        $('.navigation-wrapper').toggleClass('visible animated bounceOutUp');
+        $('.navigation-wrapper').off('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend');
+      });
+      $('.navigation-wrapper').toggleClass('animated bounceInDown animated bounceOutUp');
+
+    } else {
+      $('.navigation-wrapper').toggleClass('visible animated bounceInDown');
+    }
+    $('.btn-mobile-menu__icon').toggleClass('social iconfont icon-list social iconfont icon-angleup animated fadeIn');
+});
+	</script>
+</body>
+
+</html>
