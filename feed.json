@@ -1,0 +1,30 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "喵喵随心记",
+    "description": "",
+    "home_page_url": "https://scarletdor.github.io",
+    "feed_url": "https://scarletdor.github.io/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "绯色之喵"
+    },
+    "items": [
+        {
+            "id": "https://scarletdor.github.io/ha-ha-ha-hadi-yi-pian.html",
+            "url": "https://scarletdor.github.io/ha-ha-ha-hadi-yi-pian.html",
+            "title": "哈哈哈哈，第一篇",
+            "summary": "也许是一个新的选择！！",
+            "content_html": "\n    <figure class=\"post__image post__image--center\">\n      <img loading=\"lazy\" src=\"https://scarletdor.github.io/media/posts/1/10787656e49cdfa8ef4188d38549f4cafd7a6775-skeletons-resume-site.jpg\" height=\"400\" width=\"400\" alt=\"\"  sizes=\"(min-width: 760px) 660px, calc(93.18vw - 30px)\" srcset=\"https://scarletdor.github.io/media/posts/1/responsive/10787656e49cdfa8ef4188d38549f4cafd7a6775-skeletons-resume-site-xs.jpg 320w ,https://scarletdor.github.io/media/posts/1/responsive/10787656e49cdfa8ef4188d38549f4cafd7a6775-skeletons-resume-site-sm.jpg 480w ,https://scarletdor.github.io/media/posts/1/responsive/10787656e49cdfa8ef4188d38549f4cafd7a6775-skeletons-resume-site-md.jpg 768w ,https://scarletdor.github.io/media/posts/1/responsive/10787656e49cdfa8ef4188d38549f4cafd7a6775-skeletons-resume-site-xl.jpg 1024w\">\n      \n    </figure>\n\n  <p>\n    也许是一个新的选择！！\n  </p>",
+            "image": "https://scarletdor.github.io/media/posts/1/1743417248736.gif",
+            "author": {
+                "name": "绯色之喵"
+            },
+            "tags": [
+                   "感觉",
+                   "博客"
+            ],
+            "date_published": "2025-11-23T09:12:58+08:00",
+            "date_modified": "2025-11-23T09:16:47+08:00"
+        }
+    ]
+}

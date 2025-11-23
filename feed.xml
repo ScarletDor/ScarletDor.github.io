@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+    <title>喵喵随心记</title>
+    <link href="https://scarletdor.github.io/feed.xml" rel="self" />
+    <link href="https://scarletdor.github.io" />
+    <updated>2025-11-23T09:16:47+08:00</updated>
+    <author>
+        <name>绯色之喵</name>
+    </author>
+    <id>https://scarletdor.github.io</id>
+
+    <entry>
+        <title>哈哈哈哈，第一篇</title>
+        <author>
+            <name>绯色之喵</name>
+        </author>
+        <link href="https://scarletdor.github.io/ha-ha-ha-hadi-yi-pian.html"/>
+        <id>https://scarletdor.github.io/ha-ha-ha-hadi-yi-pian.html</id>
+        <media:content url="https://scarletdor.github.io/media/posts/1/1743417248736.gif" medium="image" />
+            <category term="感觉"/>
+            <category term="博客"/>
+
+        <updated>2025-11-23T09:12:58+08:00</updated>
+            <summary type="html">
+                <![CDATA[
+                        <img src="https://scarletdor.github.io/media/posts/1/1743417248736.gif" alt="" />
+                    也许是一个新的选择！！
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://scarletdor.github.io/media/posts/1/1743417248736.gif" class="type:primaryImage" alt="" /></p>
+                
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://scarletdor.github.io/media/posts/1/10787656e49cdfa8ef4188d38549f4cafd7a6775-skeletons-resume-site.jpg" height="400" width="400" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://scarletdor.github.io/media/posts/1/responsive/10787656e49cdfa8ef4188d38549f4cafd7a6775-skeletons-resume-site-xs.jpg 320w ,https://scarletdor.github.io/media/posts/1/responsive/10787656e49cdfa8ef4188d38549f4cafd7a6775-skeletons-resume-site-sm.jpg 480w ,https://scarletdor.github.io/media/posts/1/responsive/10787656e49cdfa8ef4188d38549f4cafd7a6775-skeletons-resume-site-md.jpg 768w ,https://scarletdor.github.io/media/posts/1/responsive/10787656e49cdfa8ef4188d38549f4cafd7a6775-skeletons-resume-site-xl.jpg 1024w">
+      
+    </figure>
+
+  <p>
+    也许是一个新的选择！！
+  </p>
+            ]]>
+        </content>
+    </entry>
+</feed>
